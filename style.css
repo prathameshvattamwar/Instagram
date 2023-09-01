@@ -469,6 +469,9 @@ body{
     .post-upper .post-upper-profile #verified{
         margin-left: 1vw;
     }
+    .post-middle #like-heart{
+        display: none;
+    }
     .post-bottom i{
         margin: auto 1vw;
     }
