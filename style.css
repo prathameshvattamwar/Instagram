@@ -1,0 +1,538 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Inter&family=Lobster+Two&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+}
+
+html,
+body{
+    width:100vw;
+    height:100vh;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    overflow: hidden;
+}
+
+.wrapper{
+    width: 310px;
+    height: 570px;
+    position: fixed;
+    background-color: #fff;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.lock{
+    width: 99%;
+    height: 99%;
+    position: absolute;
+    /* background-color: #000; */
+    background: url(./bg.jpeg);
+    background-size: 100%;
+    z-index: 1;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.lock span {
+    font-weight: 500;
+    font-size: 42px;
+    text-shadow: 0px 0px 6px rgb(255, 1, 247);
+}
+
+.lock #time{
+    transform: translateY(-100px);
+}
+
+.lock #date_and_day{
+    font-size: 14px;
+    transform: translateY(-90px);
+}
+
+.lock #fingerprint{
+    font-size: 1.3em;
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    right: 38%;
+    bottom: 10%;
+    text-shadow: 0px 0px 10px lime;
+    cursor: grab;
+    padding: 15px;
+    border-radius: 50%;
+    transition: all ease-in-out .5s;
+}
+
+.mobile{
+    width: 305px;
+    height: 565px;
+    position: fixed;
+    background-color: #000;
+    border-radius: 15px;
+    position: fixed;
+    overflow: hidden;
+}
+
+/* ================ Top layer of camera and battery ================= */
+
+.mobile .top-mobile-part{
+    display: flex;
+    width: 100%;
+    height: 25px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0vh 1vw;
+    margin: 1vh auto;
+}
+
+.mobile .top-mobile-part .camera{
+    width: 56px;
+    height: 16px;
+    background-color: #fff;
+    border-radius: 15px;
+    position: relative;
+    padding: 3px 4px;
+    
+}
+
+.mobile .top-mobile-part .camera span{
+    width: 10px;
+    height: 10px;
+    background-color: #000;
+    border-radius: 50%;
+    z-index: 1;
+    position: absolute;
+}
+
+.mobile .top-mobile-part .battery{
+    width: 25px;
+    height: 11px;
+    background-color: lime;
+    border-radius: 15px;
+    position: relative;
+    padding: 3px 4px;
+    
+}
+
+.mobile .top-mobile-part p{
+    font-size: .65em;
+    position: absolute;
+    right: 42px;
+}
+
+.ri-wifi-line{
+    position: absolute;
+    right:75px;
+}
+
+/* ================ Top layer of camera and battery ================= */
+
+
+/* ================ Instagram logo part ================= */
+
+.header{
+    width: 100%;
+    height: 30px;
+    padding: 0 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header h2{
+    font-family: 'Lobster Two', cursive;
+    font-weight: 100;
+    font-size: 24px;
+}
+
+.header .msg-like{
+    margin-top: 5px;
+}
+
+.header i{
+    font-size: 1.5em;
+    margin: auto 5px;
+    cursor: pointer;
+}
+
+/* ================ Instagram story part ================= */
+
+.full-screen{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    border-radius: 15px;
+    display: none;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+.full-screen .loader{
+    height: 5px;
+    width: 80%;
+    border: 2px solid #000;
+    margin: 1vh auto;
+    border-radius: 20px;
+    display: flex;
+    justify-content: start;
+    align-self: center;
+    display: none;
+}
+
+.full-screen .loader .loading{
+    height: 100%;
+    width: 0%;
+    background-color: #000;
+    animation: load 3s forwards ;
+}
+
+@keyframes load {
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 100%;
+    }
+}
+
+.full-screen>.username{
+    margin: 0vh 2vw;
+    color: #fff;
+    background-color: #4141417d;
+    font-size: 12px;
+    font-weight: 400;
+    padding: .5vh 1vw;
+    border-radius: 20px;
+}
+
+/* ======== story section ============== */
+.story-section {
+    margin: 1vh auto;
+    width: 100%;
+    height: 80px;
+    display:inline-flex;
+    align-items: center;
+    overflow-x: auto;
+  }
+  
+.story-section::-webkit-scrollbar{
+    display: none;
+}
+
+  .story-container {
+    text-align: center;
+  }
+  
+  .story-section .stories {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    overflow: hidden;
+    padding: 3px;
+    cursor: pointer;
+    background: linear-gradient(
+      135deg,
+      #ffb600,
+      #fe7002,
+      #fe032d,
+      #fe055c,
+      #ff00aa,
+      #d804f0,
+      #a520f8
+    );
+    margin: auto 5px;
+  }
+  
+  .story-section .stories img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+  }
+  
+  .story-section .username {
+    font-size: 8px;
+    color: #fff;
+    display: block;
+    margin-top: 3px;
+  }
+  
+/* =============== story section end ============== */
+
+/* =============== POST section ================== */
+
+.post-upper{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    padding-right: 20px;
+}
+
+.post-upper .post-upper-profile{
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+}
+
+.post-upper .post-upper-profile img{
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+}
+
+.post-upper .post-upper-profile p{
+    font-size: 13px;
+    font-family: 'Acme', sans-serif;
+    font-weight: 100;
+}
+
+.post-upper .post-upper-profile #verified{
+    width: 20px;
+    height: 20px;
+    transform: translateX(-10px);
+}
+
+#more{
+    cursor: pointer;
+    font-size: 1.6em;
+}
+
+/* =================== POST ================== */
+
+.post-middle{
+    width: 100%;
+    height: 225px;
+    cursor: pointer;
+    position: relative;
+}
+
+.post-middle img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.post-middle #like-heart{
+    position: absolute;
+    font-size: 4em;
+    opacity: .6;
+    transform: translate(-180px, 100%) scale(0);
+    transition: transform .3s ease-in-out;
+}
+
+#mobile-heart{
+    display: none;
+}
+
+/* ============== Post bottom ================= */
+
+.post-bottom{
+    width: 100%;
+    height: 30px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    padding: 0 10px;
+    margin-top: 1vh;
+    position: relative;
+}
+
+.post-bottom i{
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.post-bottom #like{
+    transition: all ease .3s;
+}
+
+.post-bottom #save{
+    transition: all .3s;
+}
+
+.download{
+    position: absolute;
+    right: 10px;
+}
+
+/* =================== Down-side part =================== */
+
+.down{
+    width: 100%;
+    height: 25px;
+    padding: 5px 15px;
+    display: flex;
+}
+
+#caption{
+    font-size: 10px;
+    margin-left: 10px;
+}
+
+.down img{
+    width: 15px;
+    height: 15px;
+    margin: auto -4px;
+}
+
+.down-para {
+    margin-left: 12px;
+}
+
+.down-para p{
+    font-size: 11px;
+}
+
+.down span{
+    font-weight: 600;
+    letter-spacing: 0.8px;
+}
+
+/* ============ bottom menu ============= */
+
+.bottom{
+    width: 100%;
+    height: 46px;
+    padding: 10px 10px;
+    display: flex;
+    gap: 35px;
+    justify-content: center;
+    align-items: center;
+}
+
+.bottom i{
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+#home{
+    width: 100%;
+    height: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#home #line{
+    width: 10vw;
+    height: 1px;
+    border-radius: 30%;
+    background-color: #ffffff;
+}
+
+/* ============================= Responsive part ====================== */
+
+@media (max-width:600px) {
+    .mobile .top-mobile-part{
+        padding: 0vh 2vh;
+    }
+    .full-screen>.username{
+        margin: 0vh 8vw;
+        color: #fff;
+        background-color: #4141417d;
+        font-size: 12px;
+        font-weight: 600;
+        padding: .5vh 1.5vw;
+        border-radius: 20px;
+    }
+    .post-upper .post-upper-profile p{
+        margin: auto 2vw;
+    }
+    .post-upper .post-upper-profile #verified{
+        margin-left: 1vw;
+    }
+    .post-bottom i{
+        margin: auto 1vw;
+    }
+    .down img{
+        margin: auto -4px;
+    }  
+    .bottom{
+        justify-content: space-evenly;
+    }     
+    #mobile-heart{
+        display: block;
+        position: absolute;
+        font-size: 4em;
+        opacity: .6;
+        transform: translate(120px, -150px) scale(0);
+        transition: transform .3s ease-in-out;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* ------------------------------------------------------------------------------------------------------- 
+
+If we don't want name below story profile then remove story-remove container from js and use this css 
+instead current css of story section
+
+---------------------------------------------------------------------------------------------------------*/
+
+/*.story-section{
+    height: 80px;
+    width: 100%;
+    padding: 7.5px 10px;
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.story-section::-webkit-scrollbar{
+    display: none;
+}
+
+.story-section .stories{
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    overflow: hidden;
+    padding: 3px;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 8px;
+    background: linear-gradient(135deg, #FFB600, #FE7002, #FE032D, #FE055C,#FF00AA, #D804F0,#A520F8);
+}
+
+.story-section .stories img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+}*/ 
