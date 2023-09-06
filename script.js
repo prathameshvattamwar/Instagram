@@ -141,10 +141,9 @@ array.forEach(function (elem, i) {
 
 var story = document.querySelector(".story-section");
 story.innerHTML = clutter;
-
+var screen = document.querySelector(".full-screen");
 
 story.addEventListener("click",function(dets){
-    let screen = document.querySelector(".full-screen");
     screen.style.display = "block";
     screen.style.backgroundImage = `url(${array[dets.target.id].content})`
 
@@ -225,4 +224,19 @@ save.addEventListener("click",function(){
         save.style.color = "#fff"
         click = 0; 
     }
+})
+
+
+// ================ Profile Section ====================
+
+var profile_section = document.querySelector("#bio")
+var bio = document.querySelector(".bio-section")
+var home_button = document.querySelector(".home");
+
+profile_section.addEventListener("click",function(){
+    bio.style.display = "block";
+})
+
+home_button.addEventListener("click",function(){
+  bio.style.display = "none";
 })
