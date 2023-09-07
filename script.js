@@ -213,11 +213,17 @@ like.addEventListener("click",function(){
 
 // =============== Post saving =================
 
-// var clicked = 0;
-var save = document.querySelector("#save");
+var post = document.querySelector("#post")
+var save = document.querySelector("#save")
+var clicked = 0;
+
 save.addEventListener("click",function(){
     if(click === 0){
         save.style.color = "lime"
+        const a = document.createElement("a");
+        a.href = post.src;
+        a.download = "post.jpg"; // Set the desired file name
+        a.click();
         click = 1;
     }
     else{
