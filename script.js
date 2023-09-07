@@ -240,3 +240,20 @@ profile_section.addEventListener("click",function(){
 home_button.addEventListener("click",function(){
   bio.style.display = "none";
 })
+
+// ================= Reel Section ======================
+
+var reel = document.querySelector("#reel")
+var home_btn = document.querySelector(".return-home")
+var reel_section = document.querySelector(".reel-section")
+var audio = document.querySelector("#audio")
+
+reel.addEventListener("click",function(){
+  reel_section.style.display = "block"
+  audio.play();
+})
+
+home_btn.addEventListener("click",function(){
+  reel_section.style.display = "none";
+  audio.pause();
+})
